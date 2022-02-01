@@ -17,6 +17,9 @@
 		173B4B7227A9703D00A0ED76 /* TableViewBindersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B7127A9703D00A0ED76 /* TableViewBindersUITests.swift */; };
 		173B4B7427A9703D00A0ED76 /* TableViewBindersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B7327A9703D00A0ED76 /* TableViewBindersUITestsLaunchTests.swift */; };
 		173B4B8227A971D600A0ED76 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B8127A971D600A0ED76 /* Functional.swift */; };
+		173B4B8927A9729700A0ED76 /* BinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B8827A9729700A0ED76 /* BinderCell.swift */; };
+		173B4B8B27A972A100A0ED76 /* BinderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B8A27A972A100A0ED76 /* BinderModel.swift */; };
+		173B4B8D27A973AD00A0ED76 /* BinderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B8C27A973AD00A0ED76 /* BinderDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		173B4B7127A9703D00A0ED76 /* TableViewBindersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewBindersUITests.swift; sourceTree = "<group>"; };
 		173B4B7327A9703D00A0ED76 /* TableViewBindersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewBindersUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		173B4B8127A971D600A0ED76 /* Functional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
+		173B4B8827A9729700A0ED76 /* BinderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderCell.swift; sourceTree = "<group>"; };
+		173B4B8A27A972A100A0ED76 /* BinderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderModel.swift; sourceTree = "<group>"; };
+		173B4B8C27A973AD00A0ED76 /* BinderDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +107,10 @@
 		173B4B4F27A9703B00A0ED76 /* TableViewBinders */ = {
 			isa = PBXGroup;
 			children = (
+				173B4B8727A9725900A0ED76 /* BindersImplementation */,
 				173B4B8327A971E700A0ED76 /* ViewControllers */,
+				173B4B8527A9722100A0ED76 /* Storyboards */,
+				173B4B8627A9724A00A0ED76 /* Views */,
 				173B4B8427A971F400A0ED76 /* Resources */,
 				173B4B8027A971C600A0ED76 /* Helpers */,
 				173B4B5027A9703B00A0ED76 /* AppDelegate.swift */,
@@ -146,12 +155,36 @@
 		173B4B8427A971F400A0ED76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				173B4B5627A9703B00A0ED76 /* Main.storyboard */,
 				173B4B5927A9703C00A0ED76 /* Assets.xcassets */,
-				173B4B5B27A9703C00A0ED76 /* LaunchScreen.storyboard */,
 				173B4B5E27A9703C00A0ED76 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		173B4B8527A9722100A0ED76 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				173B4B5627A9703B00A0ED76 /* Main.storyboard */,
+				173B4B5B27A9703C00A0ED76 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		173B4B8627A9724A00A0ED76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		173B4B8727A9725900A0ED76 /* BindersImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				173B4B8827A9729700A0ED76 /* BinderCell.swift */,
+				173B4B8A27A972A100A0ED76 /* BinderModel.swift */,
+				173B4B8C27A973AD00A0ED76 /* BinderDataSource.swift */,
+			);
+			path = BindersImplementation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +321,10 @@
 				173B4B5527A9703B00A0ED76 /* ViewController.swift in Sources */,
 				173B4B5127A9703B00A0ED76 /* AppDelegate.swift in Sources */,
 				173B4B8227A971D600A0ED76 /* Functional.swift in Sources */,
+				173B4B8D27A973AD00A0ED76 /* BinderDataSource.swift in Sources */,
+				173B4B8927A9729700A0ED76 /* BinderCell.swift in Sources */,
 				173B4B5327A9703B00A0ED76 /* SceneDelegate.swift in Sources */,
+				173B4B8B27A972A100A0ED76 /* BinderModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
