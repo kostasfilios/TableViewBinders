@@ -8,69 +8,51 @@
 import Foundation
 import UIKit
 
-final class BinderDataSource: UITableViewDataSource, UITableViewDelegate {
-    private let binders: [BinderCell & UITableViewCell]
+final class TableViewDataSource<C: BinderCell & UITableViewCell, D: BinderModel> : NSObject, UITableViewDataSource, UITableViewDelegate {
+    
+    private var binders: [C] = []
+    private var dataList: [D] = []
+    private var bindersDictionary: [D : C] = [:]
     
     
-    init(binders: [BinderCell & UITableViewCell]) {
-        
+    init(with binders: [C], tableView: UITableView) {
+        super.init()
+        self.binders = binders
+        binders.forEach { cell in
+            bindersDictionary[cell.binderModelData as! D] = cell
+        }
     }
     
+    func registerNibs() -> (UITableView) -> Void  {
+        return { tableView in
+            self.binders.forEach { cell in
+                var cellIdentifier: String { return String("\(cell)Identifier") }
+                tableView.register(UINib(nibName: String(describing: Self.self), bundle: nil), forCellReuseIdentifier: cellIdentifier)
+            }
+        }
+    }
     
+    func submit() -> ([D], UITableView) -> Void {
+        return { list, tableView in
+            self.dataList = list
+            tableView.reloadData()
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return dataList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+      return indexPath |> computCell()
     }
-    
-    func isEqual(_ object: Any?) -> Bool {
-        <#code#>
+
+    private func computCell() -> (IndexPath) -> UITableViewCell {
+        return { indexPath in
+            let binderModel = self.dataList[indexPath.row]
+            guard let binderCell = self.bindersDictionary[binderModel] else { return UITableViewCell() }
+            return binderCell
+        }
     }
-    
-    var hash: Int
-    
-    var superclass: AnyClass?
-    
-    func `self`() -> Self {
-        <#code#>
-    }
-    
-    func perform(_ aSelector: Selector!) -> Unmanaged<AnyObject>! {
-        <#code#>
-    }
-    
-    func perform(_ aSelector: Selector!, with object: Any!) -> Unmanaged<AnyObject>! {
-        <#code#>
-    }
-    
-    func perform(_ aSelector: Selector!, with object1: Any!, with object2: Any!) -> Unmanaged<AnyObject>! {
-        <#code#>
-    }
-    
-    func isProxy() -> Bool {
-        <#code#>
-    }
-    
-    func isKind(of aClass: AnyClass) -> Bool {
-        <#code#>
-    }
-    
-    func isMember(of aClass: AnyClass) -> Bool {
-        <#code#>
-    }
-    
-    func conforms(to aProtocol: Protocol) -> Bool {
-        <#code#>
-    }
-    
-    func responds(to aSelector: Selector!) -> Bool {
-        <#code#>
-    }
-    
-    var description: String
-    
     
 }

@@ -8,10 +8,12 @@
 import Foundation
 import UIKit
 
-protocol BinderCell: AnyObject, Hashable {
+protocol BinderCell: Hashable {
     
-    associatedtype T: BinderModel
+    associatedtype binderData: BinderModel
     
-    func setup(with data: T)
+    var binderModelData: binderData { get set }
+    
+    func setup(with data: binderData)
     
 }
