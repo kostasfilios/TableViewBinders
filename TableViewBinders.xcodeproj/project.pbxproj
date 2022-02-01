@@ -16,6 +16,7 @@
 		173B4B6827A9703D00A0ED76 /* TableViewBindersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B6727A9703D00A0ED76 /* TableViewBindersTests.swift */; };
 		173B4B7227A9703D00A0ED76 /* TableViewBindersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B7127A9703D00A0ED76 /* TableViewBindersUITests.swift */; };
 		173B4B7427A9703D00A0ED76 /* TableViewBindersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B7327A9703D00A0ED76 /* TableViewBindersUITestsLaunchTests.swift */; };
+		173B4B8227A971D600A0ED76 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B8127A971D600A0ED76 /* Functional.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		173B4B6D27A9703D00A0ED76 /* TableViewBindersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewBindersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		173B4B7127A9703D00A0ED76 /* TableViewBindersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewBindersUITests.swift; sourceTree = "<group>"; };
 		173B4B7327A9703D00A0ED76 /* TableViewBindersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewBindersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		173B4B8127A971D600A0ED76 /* Functional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,11 @@
 		173B4B4F27A9703B00A0ED76 /* TableViewBinders */ = {
 			isa = PBXGroup;
 			children = (
+				173B4B8327A971E700A0ED76 /* ViewControllers */,
+				173B4B8427A971F400A0ED76 /* Resources */,
+				173B4B8027A971C600A0ED76 /* Helpers */,
 				173B4B5027A9703B00A0ED76 /* AppDelegate.swift */,
 				173B4B5227A9703B00A0ED76 /* SceneDelegate.swift */,
-				173B4B5427A9703B00A0ED76 /* ViewController.swift */,
-				173B4B5627A9703B00A0ED76 /* Main.storyboard */,
-				173B4B5927A9703C00A0ED76 /* Assets.xcassets */,
-				173B4B5B27A9703C00A0ED76 /* LaunchScreen.storyboard */,
-				173B4B5E27A9703C00A0ED76 /* Info.plist */,
 			);
 			path = TableViewBinders;
 			sourceTree = "<group>";
@@ -125,6 +125,33 @@
 				173B4B7327A9703D00A0ED76 /* TableViewBindersUITestsLaunchTests.swift */,
 			);
 			path = TableViewBindersUITests;
+			sourceTree = "<group>";
+		};
+		173B4B8027A971C600A0ED76 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				173B4B8127A971D600A0ED76 /* Functional.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		173B4B8327A971E700A0ED76 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				173B4B5427A9703B00A0ED76 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		173B4B8427A971F400A0ED76 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				173B4B5627A9703B00A0ED76 /* Main.storyboard */,
+				173B4B5927A9703C00A0ED76 /* Assets.xcassets */,
+				173B4B5B27A9703C00A0ED76 /* LaunchScreen.storyboard */,
+				173B4B5E27A9703C00A0ED76 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +287,7 @@
 			files = (
 				173B4B5527A9703B00A0ED76 /* ViewController.swift in Sources */,
 				173B4B5127A9703B00A0ED76 /* AppDelegate.swift in Sources */,
+				173B4B8227A971D600A0ED76 /* Functional.swift in Sources */,
 				173B4B5327A9703B00A0ED76 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
