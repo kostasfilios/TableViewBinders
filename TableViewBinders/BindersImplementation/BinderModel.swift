@@ -7,6 +7,10 @@
 
 import Foundation
 
-protocol BinderModel: Hashable {
+protocol BinderModelConformer {
 
+}
+
+class BinderModel: NSObject, BinderModelConformer {
+    
 }

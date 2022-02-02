@@ -8,35 +8,41 @@
 import Foundation
 import UIKit
 
-final class TableViewDataSource<C: BinderCell & UITableViewCell, D: BinderModel> : NSObject, UITableViewDataSource, UITableViewDelegate {
+
+final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
-    private var binders: [C] = []
-    private var dataList: [D] = []
-    private var bindersDictionary: [D : C] = [:]
+    private var dataList: [BinderModel] = []
+    private var bindersDictionary: [String : (BinderCell)] = [:]
     
     
-    init(with binders: [C], tableView: UITableView) {
+    init(with binders: [BinderCell]) {
         super.init()
-        self.binders = binders
         binders.forEach { cell in
-            bindersDictionary[cell.binderModelData as! D] = cell
+            bindersDictionary[cell.getType()] = cell
         }
     }
     
     func registerNibs() -> (UITableView) -> Void  {
         return { tableView in
-            self.binders.forEach { cell in
-                var cellIdentifier: String { return String("\(cell)Identifier") }
-                tableView.register(UINib(nibName: String(describing: Self.self), bundle: nil), forCellReuseIdentifier: cellIdentifier)
+            self.bindersDictionary.forEach { key, cell in
+                tableView.register(UINib(nibName: cell.cellNibName(), bundle: nil), forCellReuseIdentifier: cell.getType())
             }
         }
     }
     
-    func submit() -> ([D], UITableView) -> Void {
+    func submit() -> ([BinderModel], UITableView) -> Void {
         return { list, tableView in
             self.dataList = list
             tableView.reloadData()
         }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,14 +50,14 @@ final class TableViewDataSource<C: BinderCell & UITableViewCell, D: BinderModel>
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      return indexPath |> computCell()
+      return (tableView, indexPath) |> computCell()
     }
 
-    private func computCell() -> (IndexPath) -> UITableViewCell {
-        return { indexPath in
-            let binderModel = self.dataList[indexPath.row]
-            guard let binderCell = self.bindersDictionary[binderModel] else { return UITableViewCell() }
-            return binderCell
+    private func computCell() -> (UITableView, IndexPath) -> UITableViewCell {
+        return { tableView, indexPath in
+            let binderModel = "\(type(of: self.dataList[indexPath.row]))"
+            let cell = tableView.dequeueReusableCell(withIdentifier: binderModel, for: indexPath) as! BinderCell
+            return cell
         }
     }
     

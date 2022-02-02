@@ -8,12 +8,21 @@
 import Foundation
 import UIKit
 
-protocol BinderCell: Hashable {
+
+protocol BinderCellConformer: Hashable {
+    associatedtype DataType: BinderModel
+    func setup(with data: DataType)
     
-    associatedtype binderData: BinderModel
+}
+
+class BinderCell: UITableViewCell, BinderCellConformer {
+    func setup(with data: BinderModel) {}
     
-    var binderModelData: binderData { get set }
+    func getType() -> String {
+        return "\(type(of: BinderModel.self).self)"
+    }
     
-    func setup(with data: binderData)
-    
+    func cellNibName() -> String {
+        return String(describing: Self.self)
+    }
 }
