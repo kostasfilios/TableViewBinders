@@ -12,10 +12,10 @@ import UIKit
 final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     private var dataList: [BinderModel] = []
-    private var bindersDictionary: [String : (BinderCell)] = [:]
+    private var bindersDictionary: [String : (BinderCell<BinderModel>)] = [:]
     
     
-    init(with binders: [BinderCell]) {
+    init(with binders: [BinderCell<BinderModel>]) {
         super.init()
         binders.forEach { cell in
             bindersDictionary[cell.getType()] = cell
@@ -30,7 +30,13 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func submit() -> ([BinderModel], UITableView) -> Void {
+    func setData() -> ([BinderModel], UITableView) -> Void {
+        return { list, tableView in
+            self.dataList = list
+        }
+    }
+    
+    func submitList() -> ([BinderModel], UITableView) -> Void {
         return { list, tableView in
             self.dataList = list
             tableView.reloadData()

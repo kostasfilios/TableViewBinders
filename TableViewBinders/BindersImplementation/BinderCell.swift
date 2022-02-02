@@ -12,14 +12,14 @@ import UIKit
 protocol BinderCellConformer: Hashable {
     associatedtype DataType: BinderModel
     func setup(with data: DataType)
-    
 }
 
-class BinderCell: UITableViewCell, BinderCellConformer {
-    func setup(with data: BinderModel) {}
+class BinderCell<T: BinderModel>: UITableViewCell, BinderCellConformer {
+    
+    func setup(with data: T) {}
     
     func getType() -> String {
-        return "\(type(of: BinderModel.self).self)"
+        return "\(type(of: T.self).self)"
     }
     
     func cellNibName() -> String {

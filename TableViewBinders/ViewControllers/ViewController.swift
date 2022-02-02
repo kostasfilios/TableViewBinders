@@ -25,7 +25,7 @@ final class ViewController: UIViewController {
     private func setupBinderDataSource() {
         let binders = [ImageCellBinderTableViewCell(),
                        TitleCellBinderTableViewCell()]
-        binderDataSource = BinderDataSource(with: binders)
+//        binderDataSource = BinderDataSource(with: binders)
         tableView.dataSource = binderDataSource
         tableView.delegate = binderDataSource
         tableView |> binderDataSource.registerNibs()
@@ -40,7 +40,7 @@ final class ViewController: UIViewController {
                     ImageCellBinderModel(),
                     ImageCellBinderModel(),
                     ImageCellBinderModel()]
-        (test, tableView) |> binderDataSource.submit()
+        (test, tableView) |> binderDataSource.submitList()
     }
 
 }

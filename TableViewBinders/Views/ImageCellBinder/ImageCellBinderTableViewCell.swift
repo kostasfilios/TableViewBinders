@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class ImageCellBinderTableViewCell: BinderCell {
+final class ImageCellBinderTableViewCell: BinderCell<ImageCellBinderModel> {
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
     }
     
-    override func setup(with data: BinderModel) {
+    override func setup(with data: ImageCellBinderModel) {
         
     }
     

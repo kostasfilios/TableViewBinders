@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TitleCellBinderTableViewCell: BinderCell {
+class TitleCellBinderTableViewCell: BinderCell<TitleCellBinderModel> {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,7 +17,7 @@ class TitleCellBinderTableViewCell: BinderCell {
 
     
     
-    override func setup(with data: BinderModel) {
+    override func setup(with data: TitleCellBinderModel) {
         
     }
     
