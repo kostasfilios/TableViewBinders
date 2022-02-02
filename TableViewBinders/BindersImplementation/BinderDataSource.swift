@@ -14,7 +14,6 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     private var dataList: [BinderModel] = []
     private var bindersDictionary: [String : (BinderCell)] = [:]
     
-    
     init(with binders: [BinderCell]) {
         super.init()
         binders.forEach { cell in
@@ -58,6 +57,8 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       return (tableView, indexPath) |> computCell()
     }
+    
+    // MARK:  Private Methods
 
     private func computCell() -> (UITableView, IndexPath) -> UITableViewCell {
         return { tableView, indexPath in
