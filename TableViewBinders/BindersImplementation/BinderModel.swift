@@ -6,11 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
 protocol BinderModelConformer {
+    
+    func rowHeight() -> CGFloat
 
 }
 
 class BinderModel: NSObject, BinderModelConformer {
-    
+    func rowHeight() -> CGFloat {
+        return 45
+    }
 }

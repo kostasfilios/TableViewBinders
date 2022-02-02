@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 final class TitleCellBinderModel: BinderModel {
+    
+    override func rowHeight() -> CGFloat {
+        return 80
+    }
     
 }

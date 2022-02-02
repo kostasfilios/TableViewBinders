@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 final class ImageCellBinderModel: BinderModel {
     
+    override func rowHeight() -> CGFloat {
+        return 40
+    }
 }

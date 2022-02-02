@@ -42,7 +42,7 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
+        return dataList[indexPath.row].rowHeight()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
