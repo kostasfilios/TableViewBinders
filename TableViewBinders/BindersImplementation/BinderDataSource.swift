@@ -11,7 +11,7 @@ import UIKit
 
 final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
-    private var dataList: [BinderModel] = []
+    private var dataList: [BinderModelConformer] = []
     private var bindersDictionary: [String : (BinderCell)] = [:]
     
     init(with binders: [BinderCell]) {
@@ -35,7 +35,7 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func submit() -> ([BinderModel], UITableView) -> Void {
+    func submit() -> ([BinderModelConformer], UITableView) -> Void {
         return { list, tableView in
             self.dataList = list
             tableView.reloadData()

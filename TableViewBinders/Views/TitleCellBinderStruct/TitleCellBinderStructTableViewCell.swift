@@ -1,13 +1,13 @@
 //
-//  TitleCellBinderTableViewCell.swift
+//  TitleCellBinderStructTableViewCell.swift
 //  TableViewBinders
 //
-//  Created by Mobile Lead on 2/2/22.
+//  Created by Kostas Filios on 2/2/22.
 //
 
 import UIKit
 
-class TitleCellBinderTableViewCell: BinderCell {
+class TitleCellBinderStructTableViewCell: BinderCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,5 +18,6 @@ class TitleCellBinderTableViewCell: BinderCell {
         
     }
     
-    override func getType() -> String { TitleCellBinderModel.getType() }
+    override func getType() -> String { TitleCellBinderModelStruct.getType() }
 }
+

@@ -24,7 +24,9 @@ final class ViewController: UIViewController {
 
     private func setupBinderDataSource() {
         let binders = [ImageCellBinderTableViewCell(),
-                       TitleCellBinderTableViewCell()]
+                       ImageCellBinderStructTableViewCell(),
+                       TitleCellBinderTableViewCell(),
+                       TitleCellBinderStructTableViewCell()]
         binderDataSource = BinderDataSource(with: binders)
         tableView.dataSource = binderDataSource
         tableView.delegate = binderDataSource
@@ -39,7 +41,18 @@ final class ViewController: UIViewController {
                     ImageCellBinderModel(),
                     ImageCellBinderModel(),
                     ImageCellBinderModel(),
-                    ImageCellBinderModel()]
+                    ImageCellBinderModel(),
+                    TitleCellBinderModelStruct(),
+                    TitleCellBinderModelStruct(),
+                    ImageCellBinderModelStruct(),
+                    ImageCellBinderModelStruct(),
+                    TitleCellBinderModelStruct(),
+                    ImageCellBinderModelStruct(),
+                    TitleCellBinderModelStruct(),
+                    ImageCellBinderModelStruct(),
+                    TitleCellBinderModelStruct(),
+                    ImageCellBinderModelStruct(),
+                    ImageCellBinderModelStruct()] as [BinderModelConformer]
         (test, tableView) |> binderDataSource.submit()
     }
 

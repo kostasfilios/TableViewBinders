@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142CF90927AB055E0095921B /* TitleCellBinderModelStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142CF90827AB055E0095921B /* TitleCellBinderModelStruct.swift */; };
+		142CF90B27AB057F0095921B /* ImageCellBinderModelStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142CF90A27AB057F0095921B /* ImageCellBinderModelStruct.swift */; };
+		142CF90F27AB06380095921B /* TitleCellBinderStructTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142CF90D27AB06380095921B /* TitleCellBinderStructTableViewCell.swift */; };
+		142CF91027AB06380095921B /* TitleCellBinderStructTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142CF90E27AB06380095921B /* TitleCellBinderStructTableViewCell.xib */; };
+		142CF91427AB071C0095921B /* ImageCellBinderStructTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142CF91227AB071C0095921B /* ImageCellBinderStructTableViewCell.swift */; };
+		142CF91527AB071C0095921B /* ImageCellBinderStructTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142CF91327AB071C0095921B /* ImageCellBinderStructTableViewCell.xib */; };
 		173B4B5127A9703B00A0ED76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B5027A9703B00A0ED76 /* AppDelegate.swift */; };
 		173B4B5327A9703B00A0ED76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B5227A9703B00A0ED76 /* SceneDelegate.swift */; };
 		173B4B5527A9703B00A0ED76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B4B5427A9703B00A0ED76 /* ViewController.swift */; };
@@ -47,6 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		142CF90827AB055E0095921B /* TitleCellBinderModelStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCellBinderModelStruct.swift; sourceTree = "<group>"; };
+		142CF90A27AB057F0095921B /* ImageCellBinderModelStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellBinderModelStruct.swift; sourceTree = "<group>"; };
+		142CF90D27AB06380095921B /* TitleCellBinderStructTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCellBinderStructTableViewCell.swift; sourceTree = "<group>"; };
+		142CF90E27AB06380095921B /* TitleCellBinderStructTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCellBinderStructTableViewCell.xib; sourceTree = "<group>"; };
+		142CF91227AB071C0095921B /* ImageCellBinderStructTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellBinderStructTableViewCell.swift; sourceTree = "<group>"; };
+		142CF91327AB071C0095921B /* ImageCellBinderStructTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCellBinderStructTableViewCell.xib; sourceTree = "<group>"; };
 		173B4B4D27A9703B00A0ED76 /* TableViewBinders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewBinders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		173B4B5027A9703B00A0ED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		173B4B5227A9703B00A0ED76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +110,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142CF90C27AB06080095921B /* TitleCellBinderStruct */ = {
+			isa = PBXGroup;
+			children = (
+				142CF90827AB055E0095921B /* TitleCellBinderModelStruct.swift */,
+				142CF90D27AB06380095921B /* TitleCellBinderStructTableViewCell.swift */,
+				142CF90E27AB06380095921B /* TitleCellBinderStructTableViewCell.xib */,
+			);
+			path = TitleCellBinderStruct;
+			sourceTree = "<group>";
+		};
+		142CF91127AB06B70095921B /* ImageCellBinderStruct */ = {
+			isa = PBXGroup;
+			children = (
+				142CF90A27AB057F0095921B /* ImageCellBinderModelStruct.swift */,
+				142CF91227AB071C0095921B /* ImageCellBinderStructTableViewCell.swift */,
+				142CF91327AB071C0095921B /* ImageCellBinderStructTableViewCell.xib */,
+			);
+			path = ImageCellBinderStruct;
+			sourceTree = "<group>";
+		};
 		173B4B4427A9703B00A0ED76 = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +220,9 @@
 		173B4B8627A9724A00A0ED76 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				142CF90C27AB06080095921B /* TitleCellBinderStruct */,
 				F7C4CE5827AA6E3600C655BC /* TitleCellBinder */,
+				142CF91127AB06B70095921B /* ImageCellBinderStruct */,
 				F7C4CE4F27AA6C4F00C655BC /* ImageCellBinder */,
 			);
 			path = Views;
@@ -328,11 +362,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142CF91527AB071C0095921B /* ImageCellBinderStructTableViewCell.xib in Resources */,
 				173B4B5D27A9703C00A0ED76 /* LaunchScreen.storyboard in Resources */,
 				173B4B5A27A9703C00A0ED76 /* Assets.xcassets in Resources */,
 				F7C4CE5527AA6CB200C655BC /* ImageCellBinderTableViewCell.xib in Resources */,
 				173B4B5827A9703B00A0ED76 /* Main.storyboard in Resources */,
 				F7C4CE5C27AA6E5700C655BC /* TitleCellBinderTableViewCell.xib in Resources */,
+				142CF91027AB06380095921B /* TitleCellBinderStructTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,11 +393,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142CF90B27AB057F0095921B /* ImageCellBinderModelStruct.swift in Sources */,
 				F7C4CE6827AAB81800C655BC /* TableViewCellReusable.swift in Sources */,
+				142CF91427AB071C0095921B /* ImageCellBinderStructTableViewCell.swift in Sources */,
 				F7C4CE5B27AA6E5700C655BC /* TitleCellBinderTableViewCell.swift in Sources */,
 				173B4B5527A9703B00A0ED76 /* ViewController.swift in Sources */,
 				F7C4CE5E27AA6E7C00C655BC /* TitleCellBinderModel.swift in Sources */,
 				F7C4CE5727AA6CEA00C655BC /* ImageCellBinderModel.swift in Sources */,
+				142CF90927AB055E0095921B /* TitleCellBinderModelStruct.swift in Sources */,
 				173B4B5127A9703B00A0ED76 /* AppDelegate.swift in Sources */,
 				173B4B8227A971D600A0ED76 /* Functional.swift in Sources */,
 				F7C4CE5427AA6CB200C655BC /* ImageCellBinderTableViewCell.swift in Sources */,
@@ -369,6 +408,7 @@
 				173B4B8927A9729700A0ED76 /* BinderCell.swift in Sources */,
 				173B4B5327A9703B00A0ED76 /* SceneDelegate.swift in Sources */,
 				173B4B8B27A972A100A0ED76 /* BinderModel.swift in Sources */,
+				142CF90F27AB06380095921B /* TitleCellBinderStructTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

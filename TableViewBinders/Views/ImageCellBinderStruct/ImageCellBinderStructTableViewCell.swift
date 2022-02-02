@@ -1,13 +1,13 @@
 //
-//  ImageCellBinderTableViewCell.swift
+//  ImageCellBinderStructTableViewCell.swift
 //  TableViewBinders
 //
-//  Created by Mobile Lead on 2/2/22.
+//  Created by Kostas Filios on 2/2/22.
 //
 
 import UIKit
 
-final class ImageCellBinderTableViewCell: BinderCell {
+class ImageCellBinderStructTableViewCell: BinderCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -15,7 +15,7 @@ final class ImageCellBinderTableViewCell: BinderCell {
     }
     
     
-    override func getType() -> String { ImageCellBinderModel.getType() }
+    override func getType() -> String { ImageCellBinderModelStruct.getType() }
     
     
     override func setup(with data: BinderCell.DataType) {
