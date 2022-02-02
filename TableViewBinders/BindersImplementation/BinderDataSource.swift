@@ -55,12 +55,14 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      return (tableView, indexPath) |> computCell()
+        let cell = (tableView, indexPath) |> computeCell()
+        cell.setup(with: self.dataList[indexPath.row])
+        return cell
     }
     
     // MARK:  Private Methods
 
-    private func computCell() -> (UITableView, IndexPath) -> UITableViewCell {
+    private func computeCell() -> (UITableView, IndexPath) -> BinderCell {
         return { tableView, indexPath in
             let binderModel = "\(type(of: self.dataList[indexPath.row]))"
             let cell = tableView.dequeueReusableCell(withIdentifier: binderModel, for: indexPath) as! BinderCell

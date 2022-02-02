@@ -9,13 +9,16 @@ import UIKit
 
 class TitleCellBinderStructTableViewCell: BinderCell {
     
+    @IBOutlet private weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
     }
     
-    override func setup(with data: BinderModel) {
-        
+    override func setup(with data: BinderModelConformer) {
+        guard let data = data as? TitleCellBinderModelStruct else { return }
+        titleLabel.text = data.title
     }
     
     override func getType() -> String { TitleCellBinderModelStruct.getType() }

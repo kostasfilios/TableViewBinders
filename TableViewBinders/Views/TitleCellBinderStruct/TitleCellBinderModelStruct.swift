@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 
 struct TitleCellBinderModelStruct: BinderModelConformer {
+    let title: String
+    
     static func getType() -> String {
         return String(describing: Self.self)
     }
-    
     
     func rowHeight() -> CGFloat {
         return 80

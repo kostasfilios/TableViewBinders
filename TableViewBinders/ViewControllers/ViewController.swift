@@ -34,23 +34,23 @@ final class ViewController: UIViewController {
     }
     
     private func loadTestBinderModels() {
-        let test = [TitleCellBinderModel(),
+        let test = [TitleCellBinderModel(title: "Hello there"),
                     ImageCellBinderModel(),
                     ImageCellBinderModel(),
-                    TitleCellBinderModel(),
+                    TitleCellBinderModel(title: "tester"),
                     ImageCellBinderModel(),
                     ImageCellBinderModel(),
                     ImageCellBinderModel(),
                     ImageCellBinderModel(),
-                    TitleCellBinderModelStruct(),
-                    TitleCellBinderModelStruct(),
+                    TitleCellBinderModelStruct(title: "Hey"),
+                    TitleCellBinderModelStruct(title: "I"),
                     ImageCellBinderModelStruct(),
                     ImageCellBinderModelStruct(),
-                    TitleCellBinderModelStruct(),
+                    TitleCellBinderModelStruct(title: "test"),
                     ImageCellBinderModelStruct(),
-                    TitleCellBinderModelStruct(),
+                    TitleCellBinderModelStruct(title: "structs"),
                     ImageCellBinderModelStruct(),
-                    TitleCellBinderModelStruct(),
+                    TitleCellBinderModelStruct(title: "binders"),
                     ImageCellBinderModelStruct(),
                     ImageCellBinderModelStruct()] as [BinderModelConformer]
         (test, tableView) |> binderDataSource.submit()
