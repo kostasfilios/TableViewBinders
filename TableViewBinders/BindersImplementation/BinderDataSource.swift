@@ -30,6 +30,12 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    func setData() -> ([BinderModel]) -> Void {
+        return { list in
+            self.dataList = list
+        }
+    }
+    
     func submit() -> ([BinderModel], UITableView) -> Void {
         return { list, tableView in
             self.dataList = list
