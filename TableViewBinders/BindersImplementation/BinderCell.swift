@@ -26,10 +26,7 @@ final class BinderCellType {
 }
 
 class BinderCell: UITableViewCell, BinderCellConformer {
-    typealias DataType = BinderModelConformer
-    
-    func setup(with data: DataType) {}
-    
+    func setup(with data: BinderModelConformer) {}
     static var type: String {
         return String(describing: Self.self)
     }

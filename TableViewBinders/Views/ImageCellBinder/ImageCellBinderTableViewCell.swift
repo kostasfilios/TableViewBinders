@@ -14,5 +14,5 @@ final class ImageCellBinderTableViewCell: BinderCell {
         selectionStyle = .none
     }
 
-    override func setup(with data: BinderCell.DataType) {}
+    override func setup(with data: BinderModelConformer) {}
 }
