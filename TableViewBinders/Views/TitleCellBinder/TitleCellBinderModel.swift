@@ -8,20 +8,12 @@
 import Foundation
 import UIKit
 
-final class TitleCellBinderModel: BinderModel {
-    
+struct TitleCellBinderModel {
     let title: String
-    
-    init(title: String) {
-        self.title = title
-    }
-    
-    override func getCellType() -> BinderCellType {
+}
+
+extension TitleCellBinderModel: BinderModelConformer {
+    func getCellType() -> BinderCellType {
         BinderCellType(TitleCellBinderTableViewCell.self)
     }
-    
-    override func rowHeight() -> CGFloat {
-        return 80
-    }
-    
 }

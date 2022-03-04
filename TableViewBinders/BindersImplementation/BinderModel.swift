@@ -18,13 +18,3 @@ extension BinderModelConformer {
         UITableView.automaticDimension
     }
 }
-
-class BinderModel: NSObject, BinderModelConformer {
-    func rowHeight() -> CGFloat {
-        return 45
-    }
-    
-    func getCellType() -> BinderCellType {
-        return BinderCellType(ImageCellBinderTableViewCell.self)
-    }
-}

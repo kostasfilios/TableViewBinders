@@ -8,13 +8,10 @@
 import Foundation
 import UIKit
 
-final class ImageCellBinderModel: BinderModel {
-    
-    override func getCellType() -> BinderCellType {
+struct ImageCellBinderModel: BinderModelConformer {
+    func getCellType() -> BinderCellType {
         BinderCellType(ImageCellBinderTableViewCell.self)
     }
-    
-    override func rowHeight() -> CGFloat {
-        return 40
-    }
 }
+
+
