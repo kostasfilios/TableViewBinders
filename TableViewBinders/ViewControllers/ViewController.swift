@@ -20,15 +20,6 @@ final class ViewController: UIViewController {
         super.viewWillAppear(animated)
         loadTestBinderModels() 
     }
-
-    //this is boilerplate code. maybe we could simplify this further
-    private func setupBinderDataSource(from models: [BinderModelConformer]) {
-        let binders = models.map{ $0.getCellType() }
-        binderDataSource = BinderDataSource(with: binders)
-        tableView.dataSource = binderDataSource
-        tableView.delegate = binderDataSource
-        tableView |> binderDataSource.registerNibs()
-    }
     
     private func loadTestBinderModels() {
         let models = [TitleCellBinderModel(title: "Hello there"),
@@ -50,8 +41,8 @@ final class ViewController: UIViewController {
                     TitleCellBinderModelStruct(title: "binders"),
                     ImageCellBinderModelStruct(),
                     ImageCellBinderModelStruct()] as [BinderModelConformer]
-        setupBinderDataSource(from: models)
-        (models, tableView) |> binderDataSource.submit()
+        self.binderDataSource = BinderDataSource(with: models)
+        self.binderDataSource.bind(to: tableView)
     }
 
 }

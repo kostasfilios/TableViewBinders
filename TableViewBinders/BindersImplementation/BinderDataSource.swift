@@ -14,24 +14,17 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     private var dataList: [BinderModelConformer] = []
     private var binders: [BinderCellType] = []
     
-    init(with binders: [BinderCellType]) {
+    init(with models: [BinderModelConformer]) {
         super.init()
-        self.binders = binders
+        self.dataList = models
+        self.binders = models.map{ $0.getCellType() }
     }
     
-    func registerNibs() -> (UITableView) -> Void  {
-        return { tableView in
-            self.binders.forEach { cellType in
-                tableView.register(UINib(nibName: cellType.nibName, bundle: nil), forCellReuseIdentifier: cellType.identifier)
-            }
-        }
-    }
-    
-    func submit() -> ([BinderModelConformer], UITableView) -> Void {
-        return { list, tableView in
-            self.dataList = list
-            tableView.reloadData()
-        }
+    func bind(to tableView: UITableView) {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView |> registerNibs()
+        tableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,6 +47,14 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     
     // MARK:  Private Methods
 
+    private func registerNibs() -> (UITableView) -> Void  {
+        return { tableView in
+            self.binders.forEach { cellType in
+                tableView.register(UINib(nibName: cellType.nibName, bundle: nil), forCellReuseIdentifier: cellType.identifier)
+            }
+        }
+    }
+    
     private func computeCell() -> (UITableView, IndexPath) -> BinderCell {
         return { tableView, indexPath in
             let cellIdentifier = self.dataList[indexPath.row].getCellType().identifier
