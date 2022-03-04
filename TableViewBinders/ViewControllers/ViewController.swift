@@ -14,19 +14,15 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBinderDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadTestBinderModels()
+        loadTestBinderModels() 
     }
 
-    private func setupBinderDataSource() {
-        let binders = [BinderCellType(ImageCellBinderTableViewCell.self),
-                       BinderCellType(ImageCellBinderStructTableViewCell.self),
-                       BinderCellType(TitleCellBinderTableViewCell.self),
-                       BinderCellType(TitleCellBinderStructTableViewCell.self)]
+    private func setupBinderDataSource(from models: [BinderModelConformer]) {
+        let binders = models.map{ $0.getCellType() }
         binderDataSource = BinderDataSource(with: binders)
         tableView.dataSource = binderDataSource
         tableView.delegate = binderDataSource
@@ -34,7 +30,7 @@ final class ViewController: UIViewController {
     }
     
     private func loadTestBinderModels() {
-        let test = [TitleCellBinderModel(title: "Hello there"),
+        let models = [TitleCellBinderModel(title: "Hello there"),
                     ImageCellBinderModel(),
                     ImageCellBinderModel(),
                     TitleCellBinderModel(title: "tester"),
@@ -53,7 +49,8 @@ final class ViewController: UIViewController {
                     TitleCellBinderModelStruct(title: "binders"),
                     ImageCellBinderModelStruct(),
                     ImageCellBinderModelStruct()] as [BinderModelConformer]
-        (test, tableView) |> binderDataSource.submit()
+        setupBinderDataSource(from: models)
+        (models, tableView) |> binderDataSource.submit()
     }
 
 }
