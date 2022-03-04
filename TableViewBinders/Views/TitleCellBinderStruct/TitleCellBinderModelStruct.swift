@@ -12,11 +12,7 @@ struct TitleCellBinderModelStruct {
     let title: String
 }
 
-extension TitleCellBinderModelStruct: BinderModelConformer {
-    func rowHeight() -> CGFloat {
-        UITableView.automaticDimension
-    }
-    
+extension TitleCellBinderModelStruct: BinderModelConformer {    
     func getCellType() -> BinderCellType {
         BinderCellType(TitleCellBinderStructTableViewCell.self)
     }

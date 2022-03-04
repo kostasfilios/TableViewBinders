@@ -13,6 +13,12 @@ protocol BinderModelConformer {
     func getCellType() -> BinderCellType
 }
 
+extension BinderModelConformer {
+    func rowHeight() -> CGFloat {
+        UITableView.automaticDimension
+    }
+}
+
 class BinderModel: NSObject, BinderModelConformer {
     func rowHeight() -> CGFloat {
         return 45
