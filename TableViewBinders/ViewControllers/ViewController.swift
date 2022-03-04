@@ -21,6 +21,7 @@ final class ViewController: UIViewController {
         loadTestBinderModels() 
     }
 
+    //this is boilerplate code. maybe we could simplify this further
     private func setupBinderDataSource(from models: [BinderModelConformer]) {
         let binders = models.map{ $0.getCellType() }
         binderDataSource = BinderDataSource(with: binders)
