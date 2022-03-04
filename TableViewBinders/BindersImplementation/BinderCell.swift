@@ -14,7 +14,7 @@ protocol BinderCellConformer where Self: UITableViewCell {
     func setup(with data: BinderModelConformer)
 }
 
-final class BinderCellType {
+struct BinderCellType {
     let cellType: String
     let identifier: String
     let nibName: String
