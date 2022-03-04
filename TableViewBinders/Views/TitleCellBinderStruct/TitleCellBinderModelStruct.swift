@@ -8,15 +8,16 @@
 import Foundation
 import UIKit
 
-struct TitleCellBinderModelStruct: BinderModelConformer {
+struct TitleCellBinderModelStruct {
     let title: String
-    
-    static func getType() -> String {
-        return String(describing: Self.self)
-    }
-    
+}
+
+extension TitleCellBinderModelStruct: BinderModelConformer {
     func rowHeight() -> CGFloat {
-        return 80
+        UITableView.automaticDimension
     }
     
+    func getCellType() -> BinderCellType {
+        BinderCellType(TitleCellBinderStructTableViewCell.self)
+    }
 }

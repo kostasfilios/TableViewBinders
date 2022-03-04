@@ -20,6 +20,4 @@ class TitleCellBinderTableViewCell: BinderCell {
         guard let data = data as? TitleCellBinderModel else { return }
         titleLabel.text = data.title
     }
-    
-    override func getType() -> String { TitleCellBinderModel.getType() }
 }

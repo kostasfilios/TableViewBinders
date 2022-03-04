@@ -16,6 +16,10 @@ final class TitleCellBinderModel: BinderModel {
         self.title = title
     }
     
+    override func getCellType() -> BinderCellType {
+        BinderCellType(TitleCellBinderTableViewCell.self)
+    }
+    
     override func rowHeight() -> CGFloat {
         return 80
     }

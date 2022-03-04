@@ -23,10 +23,10 @@ final class ViewController: UIViewController {
     }
 
     private func setupBinderDataSource() {
-        let binders = [ImageCellBinderTableViewCell(),
-                       ImageCellBinderStructTableViewCell(),
-                       TitleCellBinderTableViewCell(),
-                       TitleCellBinderStructTableViewCell()]
+        let binders = [BinderCellType(ImageCellBinderTableViewCell.self),
+                       BinderCellType(ImageCellBinderStructTableViewCell.self),
+                       BinderCellType(TitleCellBinderTableViewCell.self),
+                       BinderCellType(TitleCellBinderStructTableViewCell.self)]
         binderDataSource = BinderDataSource(with: binders)
         tableView.dataSource = binderDataSource
         tableView.delegate = binderDataSource

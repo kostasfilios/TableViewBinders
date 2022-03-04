@@ -13,12 +13,6 @@ final class ImageCellBinderTableViewCell: BinderCell {
         super.awakeFromNib()
         selectionStyle = .none
     }
-    
-    
-    override func getType() -> String { ImageCellBinderModel.getType() }
-    
-    
-    override func setup(with data: BinderCell.DataType) {
-        
-    }
+
+    override func setup(with data: BinderCell.DataType) {}
 }

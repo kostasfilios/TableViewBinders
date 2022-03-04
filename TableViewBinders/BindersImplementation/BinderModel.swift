@@ -10,8 +10,7 @@ import UIKit
 
 protocol BinderModelConformer {
     func rowHeight() -> CGFloat
-    static func getType() -> String
-
+    func getCellType() -> BinderCellType
 }
 
 class BinderModel: NSObject, BinderModelConformer {
@@ -19,7 +18,7 @@ class BinderModel: NSObject, BinderModelConformer {
         return 45
     }
     
-    static func getType() -> String {
-        return String(describing: Self.self)
+    func getCellType() -> BinderCellType {
+        return BinderCellType(ImageCellBinderTableViewCell.self)
     }
 }

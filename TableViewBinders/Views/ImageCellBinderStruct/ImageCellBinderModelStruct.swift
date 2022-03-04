@@ -10,12 +10,12 @@ import UIKit
 
 
 struct ImageCellBinderModelStruct: BinderModelConformer {
-    static func getType() -> String {
-        return String(describing: Self.self)
+    
+    func getCellType() -> BinderCellType {
+        BinderCellType(ImageCellBinderStructTableViewCell.self)
     }
     
-    
     func rowHeight() -> CGFloat {
-        return 40
+        return UITableView.automaticDimension
     }
 }

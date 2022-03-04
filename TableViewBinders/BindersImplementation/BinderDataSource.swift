@@ -12,19 +12,17 @@ import UIKit
 final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     private var dataList: [BinderModelConformer] = []
-    private var bindersDictionary: [String : (BinderCell)] = [:]
+    private var binders: [BinderCellType] = []
     
-    init(with binders: [BinderCell]) {
+    init(with binders: [BinderCellType]) {
         super.init()
-        binders.forEach { cell in
-            bindersDictionary[cell.getType()] = cell
-        }
+        self.binders = binders
     }
     
     func registerNibs() -> (UITableView) -> Void  {
         return { tableView in
-            self.bindersDictionary.forEach { key, cell in
-                tableView.register(UINib(nibName: cell.cellNibName(), bundle: nil), forCellReuseIdentifier: cell.getType())
+            self.binders.forEach { cellType in
+                tableView.register(UINib(nibName: cellType.nibName, bundle: nil), forCellReuseIdentifier: cellType.identifier)
             }
         }
     }
@@ -64,8 +62,8 @@ final class BinderDataSource: NSObject, UITableViewDataSource, UITableViewDelega
 
     private func computeCell() -> (UITableView, IndexPath) -> BinderCell {
         return { tableView, indexPath in
-            let binderModel = "\(type(of: self.dataList[indexPath.row]))"
-            let cell = tableView.dequeueReusableCell(withIdentifier: binderModel, for: indexPath) as! BinderCell
+            let cellIdentifier = self.dataList[indexPath.row].getCellType().identifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BinderCell
             return cell
         }
     }

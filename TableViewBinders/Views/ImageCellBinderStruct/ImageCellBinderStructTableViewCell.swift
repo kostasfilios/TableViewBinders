@@ -14,10 +14,6 @@ class ImageCellBinderStructTableViewCell: BinderCell {
         selectionStyle = .none
     }
     
-    
-    override func getType() -> String { ImageCellBinderModelStruct.getType() }
-    
-    
     override func setup(with data: BinderCell.DataType) {
         
     }
