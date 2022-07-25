@@ -22,4 +22,5 @@ class TitleCellBinderTableViewCell: BinderCell {
     }
     
     override func getType() -> String { TitleCellBinderModel.getType() }
+    
 }

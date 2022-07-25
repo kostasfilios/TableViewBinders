@@ -33,7 +33,7 @@ final class ViewController: UIViewController {
     
     private func loadTestBinderModels() {
         let photoOfTheDay = "https://apod.nasa.gov/apod/image/2207/FindTheMoon_soltanolkotabi_1080.jpg"
-        let test = [ImageCellBinderModel(photoOfTheDay),
+        let testData = [ImageCellBinderModel(photoOfTheDay),
                     ImageCellBinderModel(photoOfTheDay),
                     TitleCellBinderModel(title: "Hey"),
                     ImageCellBinderModel(photoOfTheDay),
@@ -51,7 +51,24 @@ final class ViewController: UIViewController {
                     TitleCellBinderModel(title: "The day"),
                     ImageCellBinderModel(photoOfTheDay),
                     ImageCellBinderModel(photoOfTheDay)]
-        (test, tableView) |> binderDataSource.submitList()
+        (testData, tableView) |> binderDataSource.submitList()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+            guard let self = self else { return }
+            let testData2 = [ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay),
+                        ImageCellBinderModel(photoOfTheDay)]
+            (testData2, self.tableView) |> self.binderDataSource.submitList()
+        }
     }
 
 }

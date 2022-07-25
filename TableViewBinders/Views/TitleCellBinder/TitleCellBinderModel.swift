@@ -20,4 +20,9 @@ final class TitleCellBinderModel: BinderModel {
         return 80
     }
     
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let other = object as? TitleCellBinderModel else { return  false }
+        return other.title == self.title
+    }
+    
 }
