@@ -30,6 +30,9 @@ dataList |> binderDataSource.setPendingData()
 tableView |> binderDataSource.submitPendingUpdate()
 ```
 
+## Pending List
+Mutliple sections 
+
 ## Authors
 
 - [@kostasfilios](https://github.com/kostasfilios)
