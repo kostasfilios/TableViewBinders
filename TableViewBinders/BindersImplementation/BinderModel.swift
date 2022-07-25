@@ -11,12 +11,15 @@ import UIKit
 protocol BinderModelConformer {
     func rowHeight() -> CGFloat
     static func getType() -> String
-
 }
 
 class BinderModel: NSObject, BinderModelConformer {
     func rowHeight() -> CGFloat {
-        return 45
+        return UITableView.automaticDimension
+    }
+    
+    func isEditable() -> Bool {
+        return false
     }
     
     static func getType() -> String {

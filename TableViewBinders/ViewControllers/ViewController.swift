@@ -24,9 +24,7 @@ final class ViewController: UIViewController {
 
     private func setupBinderDataSource() {
         let binders = [ImageCellBinderTableViewCell(),
-                       ImageCellBinderStructTableViewCell(),
-                       TitleCellBinderTableViewCell(),
-                       TitleCellBinderStructTableViewCell()]
+                       TitleCellBinderTableViewCell()]
         binderDataSource = BinderDataSource(with: binders)
         tableView.dataSource = binderDataSource
         tableView.delegate = binderDataSource
@@ -34,26 +32,26 @@ final class ViewController: UIViewController {
     }
     
     private func loadTestBinderModels() {
-        let test = [TitleCellBinderModel(title: "Hello there"),
-                    ImageCellBinderModel(),
-                    ImageCellBinderModel(),
-                    TitleCellBinderModel(title: "tester"),
-                    ImageCellBinderModel(),
-                    ImageCellBinderModel(),
-                    ImageCellBinderModel(),
-                    ImageCellBinderModel(),
-                    TitleCellBinderModelStruct(title: "Hey"),
-                    TitleCellBinderModelStruct(title: "I"),
-                    ImageCellBinderModelStruct(),
-                    ImageCellBinderModelStruct(),
-                    TitleCellBinderModelStruct(title: "test"),
-                    ImageCellBinderModelStruct(),
-                    TitleCellBinderModelStruct(title: "structs"),
-                    ImageCellBinderModelStruct(),
-                    TitleCellBinderModelStruct(title: "binders"),
-                    ImageCellBinderModelStruct(),
-                    ImageCellBinderModelStruct()] as [BinderModelConformer]
-        (test, tableView) |> binderDataSource.submit()
+        let photoOfTheDay = "https://apod.nasa.gov/apod/image/2207/FindTheMoon_soltanolkotabi_1080.jpg"
+        let test = [ImageCellBinderModel(photoOfTheDay),
+                    ImageCellBinderModel(photoOfTheDay),
+                    TitleCellBinderModel(title: "Hey"),
+                    ImageCellBinderModel(photoOfTheDay),
+                    ImageCellBinderModel(photoOfTheDay),
+                    ImageCellBinderModel(photoOfTheDay),
+                    ImageCellBinderModel(photoOfTheDay),
+                    TitleCellBinderModel(title: "this"),
+                    TitleCellBinderModel(title: "is"),
+                    ImageCellBinderModel(photoOfTheDay),
+                    ImageCellBinderModel(photoOfTheDay),
+                    TitleCellBinderModel(title: "NASA's"),
+                    ImageCellBinderModel(photoOfTheDay),
+                    TitleCellBinderModel(title: "Photo of"),
+                    ImageCellBinderModel(photoOfTheDay),
+                    TitleCellBinderModel(title: "The day"),
+                    ImageCellBinderModel(photoOfTheDay),
+                    ImageCellBinderModel(photoOfTheDay)]
+        (test, tableView) |> binderDataSource.submitList()
     }
 
 }

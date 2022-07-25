@@ -13,19 +13,32 @@ protocol BinderCellConformer: Hashable {
     func setup(with data: BinderModelConformer)
     func getType() -> String
     func cellNibName() -> String
-    
+    func delete()
+    var deletable: Bool { get }
 }
 
 class BinderCell: UITableViewCell, BinderCellConformer {
     typealias DataType = BinderModelConformer
     
-    func setup(with data: DataType) {}
+    private var binder: DataType?
     
-    func getType() -> String {
-        return "You have to set it on inheritance"
+    var deletable: Bool {
+        return false
     }
     
+    var binderModel: DataType? { binder }
+
+    func setup(with data: DataType) {
+        binder = data
+    }
+
+    func getType() -> String {
+        fatalError("All subclasses of BinderCell must override the getType function")
+    }
+
     func cellNibName() -> String {
         return String(describing: Self.self)
     }
+    
+    func delete() {}
 }

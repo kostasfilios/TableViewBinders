@@ -10,7 +10,13 @@ import UIKit
 
 final class ImageCellBinderModel: BinderModel {
     
+    let imageUrl: String?
+    
+    init(_ imageUrl: String) {
+        self.imageUrl = imageUrl
+    }
+    
     override func rowHeight() -> CGFloat {
-        return 40
+        return 200
     }
 }
