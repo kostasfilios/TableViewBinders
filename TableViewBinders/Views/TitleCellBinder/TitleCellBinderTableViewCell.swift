@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TitleCellBinderTableViewCell: BinderCell {
+final class TitleCellBinderTableViewCell: BinderCell {
     
     @IBOutlet private weak var titleLabel: UILabel!
     
